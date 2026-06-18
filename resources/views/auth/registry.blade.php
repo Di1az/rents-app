@@ -5,7 +5,7 @@
 @endsection
 
 @section('contents')
-    <p class="text-center uppercase mt-5 font-bold">Crea tu cuenta</p>
+    <p class="text-center uppercase mt-5 font-bold">Crear cuenta</p>
 
     <form method="POST" action="{{ route('registry.store') }}" class="mt-14 space-y-5" novalidate>
         @csrf
@@ -60,7 +60,7 @@
 
         <input 
             type="submit"
-            value="Crear Cuenta"
+            value="Registrarme"
             class="">
     </form>
 @endsection

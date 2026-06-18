@@ -37,18 +37,18 @@ class RegistryRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'El nombre es obligatorio.',
+            'name.required' => 'El Nombre es obligatorio.',
             'name.max' => 'El nombre no puede tener más de 50 caracteres.',
             'name.regex' => 'El nombre solo puede contener letras.',
-            'email.required' => 'El email es obligatorio.',
+            'email.required' => 'El Email es obligatiorio.',
             'email.email' => 'El formato del email es incorrecto.',
-            'email.unique' => 'Este correo ya se encuentra registrado',
-            'password.required' => 'La contraseña es obligatoria.',
+            'email.unique' => 'Este correo ya esta registrado.',
+            'password.required' => 'El Password es obligatiorio.',
             'password.confirmed' => 'Las contraseñas no coinciden.',
-            'password.min' => 'La contraseña debe de tener mínimo 8 caracteres.',
-            'password.mixed' => 'La Contraseña debe tener al menos una letra mayúscula y una letra minúscula',
-            'password.symbols' => 'La Contraseña debe tener al menos una caractér especial',
-            'password.numbers' => 'La Contraseña debe tener al menos un número',
+            'password.min' => 'El Password debe de tener mínimo 8 caracteres.',
+            'password.mixed' => 'El Password debe tener al menos una letra mayúscula y una letra minúscula.',
+            'password.symbols' => 'El Password debe tener al menos una caractér especial.',
+            'password.numbers' => 'El Password debe tener al menos un número.',
         ];
     }
 }
