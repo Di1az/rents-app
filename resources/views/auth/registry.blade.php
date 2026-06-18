@@ -7,7 +7,7 @@
 @section('contents')
     <p class="text-center uppercase mt-5 font-bold">Crea tu cuenta</p>
 
-    <form method="POST" action="{{ route('registry.store') }}" class="mt-7">
+    <form method="POST" action="{{ route('registry.store') }}" class="mt-14 space-y-5" novalidate>
         @csrf
 
         <div class="text-center">
@@ -16,8 +16,13 @@
             <input id="name" 
                 type="text"
                 name="name"  
-                placeholder="Nombre Completo"/>
+                placeholder="Nombre Completo"
+                value="{{ old('name') }}">
         </div>
+
+        @error('name')
+            <p class="text-red-600">{{ $message }}</p>
+        @enderror
 
         <div class="text-center">
             <label for="email">Email</label>
@@ -25,8 +30,13 @@
             <input id="email" 
                 type="email" 
                 name="email" 
-                placeholder="Correo Electrónico">
+                placeholder="Correo Electrónico"
+                value="{{ old('email') }}">
         </div>
+
+        @error('email')
+            <p class="text-red-600">{{ $message }}</p>
+        @enderror
 
         <div class="text-center">
             <label for="password">Contraseña</label>
@@ -35,6 +45,10 @@
                 name="password" 
                 placeholder="Ingrese una Contraseña">
         </div>
+
+        @error('password')
+            <p class="text-red-600">{{ $message }}</p>
+        @enderror
 
         <div class="text-center">
             <label for="password_confirmation">Confirmar Contraseña</label>

@@ -25,7 +25,7 @@ class RegistryRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:50', 'regex:/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/u'],
-            'email' => ['required','email'],
+            'email' => ['required','email', 'unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(2)
                 // ->mixedCase()
                 // ->symbols()
@@ -37,11 +37,12 @@ class RegistryRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.requirde' => 'El nombre es obligatorio.',
+            'name.required' => 'El nombre es obligatorio.',
             'name.max' => 'El nombre no puede tener más de 50 caracteres.',
-            'name.regex' => 'El nombre solo puede contener letras y acentos.',
+            'name.regex' => 'El nombre solo puede contener letras.',
             'email.required' => 'El email es obligatorio.',
             'email.email' => 'El formato del email es incorrecto.',
+            'email.unique' => 'Este correo ya se encuentra registrado',
             'password.required' => 'La contraseña es obligatoria.',
             'password.confirmed' => 'Las contraseñas no coinciden.',
             'password.min' => 'La contraseña debe de tener mínimo 8 caracteres.',
