@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegistryRequest;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
@@ -16,10 +18,18 @@ class RegisterController extends Controller
 
     public function store(RegistryRequest $request) 
     {
-        //Obtengo los datos validados del request
+        //Obtenemos los datos validados del request
         $data = $request->validated();
         
         //Creamos el modelo y obtenemos la instancia
         $user = User::create($data);
+
+        //Disparamos el evento Registered
+        event(new Registered($user));
+
+        //Autenticamos el usuario, esto creará un cookie que la recuperamos en la ruta
+        Auth::login($user);
+
+        return redirect()->route('verification.notice');
     }
 }
