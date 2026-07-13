@@ -1,9 +1,9 @@
-@extends('layouts.base')
+@extends('layouts.auth')
 
-@section('tittle')
+@section('name')
     Crear Cuenta
 @endsection
 
-@section('contents')
+@section('auth-contents')
     <p class="mt-5 text-lg">Tu cuenta fue creada con éxito. Ahora solo debes confirmarla, revisa tu e-mail.</p>
 @endsection

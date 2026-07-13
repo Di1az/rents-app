@@ -26,7 +26,7 @@ class RegistryRequest extends FormRequest
         return [
             'name' => ['required', 'max:50', 'regex:/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/u'],
             'email' => ['required','email', 'unique:users,email'],
-            'password' => ['required', 'confirmed', Password::min(2)
+            'password' => ['required', 'confirmed', Password::min(4)
                 // ->mixedCase()
                 // ->symbols()
                 // ->numbers()

@@ -22,7 +22,7 @@
         <header class="bg-blue-500 py-7">
             <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
                 <div class="w-full max-w-100">
-                    <a href="{{ route('dashboard') }}" class="text-white font-bold uppercase p-2"> Nombre de la app</a>
+                    <a href="#" class="text-white font-bold uppercase p-2"> Nombre de la app</a>
                 </div>
                 <nav class="flex flex-col lg:flex-row items-center gap-4">
                     <a 
@@ -37,6 +37,7 @@
                 </nav>
             </div>
         </header>
+        
         @yield('contents')
     </body>
 
