@@ -18,7 +18,8 @@ class LoginController extends Controller
         $data = $request->validated();
 
         if(!Auth::attempt($data)) {
-            return back()->with('error', 'Las credenciales son incorrectas');
+            return redirect()->route('login')
+                ->with('error', 'Las credenciales son incorrectas');
         }
 
         return redirect()->route('dashboard');
