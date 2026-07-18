@@ -27,3 +27,4 @@ Homestead.yaml
 Thumbs.db
 pnpm-lock.yaml
 .npmrc
+backup-rents.sql
